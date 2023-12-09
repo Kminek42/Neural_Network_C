@@ -5,7 +5,7 @@ All weights and biases are defined as an 1D array of floats, which may be useful
 
 ## Installation
 
-Just include "neural_network.h" ¯\_(ツ)_/¯
+Just include "neural_network.h" in your project
 
 ## Usage
 
