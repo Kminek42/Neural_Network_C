@@ -1,11 +1,7 @@
 # Simple Neural Network for C
 
 Simple neural network library that can be used on microcontrollers like ESP32 or Arduino.
-All weights and biases are defined as an 1D array of floats, which may be usefull for genetic programming.
-
-## Installation
-
-Just include "neural_network.h" in your project
+All weights and biases are stored in genotype.csv as an 1D array of floats, which may be usefull for genetic programming.
 
 ## Usage
 
