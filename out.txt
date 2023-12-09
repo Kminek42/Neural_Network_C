@@ -1,0 +1,5 @@
+#include <math.h>
+
+static float output_0[3];
+static float output_1[2];
+void forward(float* inputs, float* outputs) {
