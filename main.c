@@ -3,7 +3,10 @@
 #include <time.h>
 
 int main() {
-    float data[170] = {0.44983466,  0.92056445, -0.61509243, -1.4112124 ,  1.02143472,
+    // Initialize the neural network -------------------------------------------
+    // Define all weights and biases
+    float data[170] = {
+        0.44983466,  0.92056445, -0.61509243, -1.4112124 ,  1.02143472,
         0.99747388,  1.21192063,  0.34226453, -1.19710729, -0.00993943,
        -0.07690885,  0.43281705,  0.07310657, -0.20294992,  0.41517974,
        -0.28985682,  0.21135129, -1.23582042,  1.17433804,  0.4620604 ,
@@ -36,25 +39,32 @@ int main() {
        -0.54199316,  0.55713056,  0.97356208, -0.39204265,  1.26353467,
         0.15171902,  0.32572507, -1.39998996,  0.60089793, -0.89023041,
        -1.3044907 , -0.42618643, -1.59614907,  0.66458321, -0.90677026,
-        0.87008614,  1.27057392, -0.80229837,  0.67611137, -0.21835998};
+        0.87008614,  1.27057392, -0.80229837,  0.67611137, -0.21835998
+    };
     
+    // Define the shape of the neural network
     int32_t shape[4] = {10, 8, 6, 4};
-    neuralNetwork nn = nn_make(shape, 3);
+
+    // Create the neural network
+    neuralNetwork nn = nn_make(shape, 4);  //layer_n = len(shape)
+
+    // Fill weights and biases with data
     nn_fill(nn, data);
 
-    float output[100];
-    float inputs[10] = {1.13100498,  0.39506118,  0.03086807, -0.1540792 , -0.62408602,
-        0.83034898,  0.60624576,  0.1255526 ,  1.86405194,  1.04523842};
+    // Define output array with lenght = max(shape)
+    // [It is also used to store temporary data in neural network]
+    float output[10];
 
-    clock_t start = clock();
+
+    // Use the neural network --------------------------------------------------
+    // Define input array
+    float inputs[10] = {
+        1.13100498,  0.39506118,  0.03086807, -0.1540792 , -0.62408602,
+        0.83034898,  0.60624576,  0.1255526 ,  1.86405194,  1.04523842
+    };
+
     nn_forward(nn, inputs, output);
-    clock_t end = clock();
 
-    printf("\n\nTime taken: %.10f\n", (double)(end - start) / CLOCKS_PER_SEC);
-
-    for (int i = 0; i < 4; i++) {
-        printf("%f\n", output[i]);
-    }
 
     return 0;
 }

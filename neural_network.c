@@ -3,7 +3,7 @@
 
 neuralNetwork nn_make(int32_t* shape, int32_t layer_n) {
     neuralNetwork nn;
-    nn.layer_n = layer_n;
+    nn.layer_n = layer_n - 1;
     nn.layers = (layer*) malloc(sizeof(layer) * layer_n);
 
     for (int32_t i = 0; i < layer_n; i++) {
