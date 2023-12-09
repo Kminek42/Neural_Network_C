@@ -1,5 +1,6 @@
 import numpy as np
 
+layers = np.array([10, 8, 6, 4])
 tab = "    "
 
 def print_matrix_mul(data, inputs_size, output_size, input_name, output_name):
@@ -29,10 +30,8 @@ def print_network(genotype, layers):
 
     return s
 
-layers = np.array([10, 8, 6, 4])
-
 with open("genotype.csv", "r") as file:
-    genotype = file.read().replace("\n", "").replace(" ", "").split(",")
+    genotype = file.read().split()
 
 genotype = np.array([float(num) for num in genotype])
 
