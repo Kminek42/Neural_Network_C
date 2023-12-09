@@ -1,6 +1,6 @@
 # Simple Neural Network for C
 
-I have created a simple neural network library that can be used on microcontrollers like ESP32 or Arduino.
+Simple neural network library that can be used on microcontrollers like ESP32 or Arduino.
 All weights and biases are defined as an 1D array of floats, which may be usefull for genetic programming.
 
 ## Installation
