@@ -1,6 +1,5 @@
 import numpy as np
 
-layers = np.array([10, 8, 6, 4])
 tab = "    "
 
 def print_matrix_mul(data, inputs_size, output_size, input_name, output_name):
@@ -35,6 +34,11 @@ with open("genotype.csv", "r") as file:
 
 genotype = np.array([float(num) for num in genotype])
 
+with open("layers.csv", "r") as file:
+    layers = file.read().split(",")
+
+layers = np.array([int(num) for num in layers])
+print(layers)
 with open("neural_network.c", "w") as file:
     file.write(f"#include <math.h>\n\n")
     s = print_network(genotype, layers)
