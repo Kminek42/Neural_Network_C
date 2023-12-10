@@ -38,7 +38,7 @@ with open("layers.csv", "r") as file:
     layers = file.read().split(",")
 
 layers = np.array([int(num) for num in layers])
-print(layers)
+
 with open("neural_network.c", "w") as file:
     file.write(f"#include <math.h>\n\n")
     s = print_network(genotype, layers)
