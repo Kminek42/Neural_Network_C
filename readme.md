@@ -5,4 +5,4 @@ All weights and biases are stored in genotype.csv as an 1D array of floats, whic
 
 ## Usage
 
-Check main.c and main.py to see how to use this library.
+Check example.ipynb and main.c to see how to use this library.
